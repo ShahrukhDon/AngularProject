@@ -1,0 +1,7 @@
+input .ng-dirty .ng-invalid
+{
+    border-color: red;
+}
+.validation-error{
+    color: red;
+}

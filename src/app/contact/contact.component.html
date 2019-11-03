@@ -1,0 +1,34 @@
+<div class="container">
+    <div *ngIf="loading else loaded">
+        <div class="lds-css">
+                <div class="lds-gear" style="100%;height:100%">
+                  <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+        </div>
+    </div>
+    <ng-template #loaded>
+            <table class="table table-dark">
+                    <tr>
+                        <td>id</td>
+                        <td>userId</td>
+                        <td>title</td>
+                        <td>bosy</td>
+                    </tr>
+                    <tr *ngFor="let p of posts;let o = index">
+                        <td>{{ p.id | currency }}</td>
+                        <td (click)="getmeindex(p.userId)">{{ p.userId }}</td> 
+                        <td (click)="getmeindex(p.title)">{{ p.title | uppercase }}</td>
+                        <td>{{ p.body }}</td>
+                    </tr>
+                </table>
+    </ng-template>
+</div>
